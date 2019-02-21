@@ -91,8 +91,8 @@ This will perform type and termination checking, first for all type-level code, 
 There are slight differences of notation between the types described in the paper and types in our implementation.
 We note these differences below:
 
-* In the paper, type-level computations are delimited by angle brackets, i.e., `<< ... >>`.
-In our implementation, type-level computations are delimited by double backticks, i.e., ` \` \`...\` \` `.
+* In the paper, type-level computations are delimited by angle brackets, i.e., << ... >>.
+In our implementation, type-level computations are delimited by double backticks, i.e.,  \`\`...\`\`.
 
 * In the paper, type-level computations refer to the receiver type of a method call using the name `tself`.
 In the implementation, we use the name `trec`.
