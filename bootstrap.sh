@@ -6,7 +6,7 @@ sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get -y update
-sudo apt-get install -y gcc g++ gcc-6 g++-6 postgresql-10 libpq-dev redis-server imagemagick libmagickwand-dev
+sudo apt-get install -y gcc g++ gcc-6 g++-6 postgresql-10 libpq-dev redis-server imagemagick libmagickwand-dev libxml2-dev libxslt1-dev
 sudo update-alternatives --remove-all gcc
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 80 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 sudo -u postgres createuser vagrant --superuser
@@ -56,7 +56,7 @@ bundle exec rake db:migrate
 cd ~
 
 # Setup Code.org
-git clone --depth 1 https://github.com/mckaz/code-dot-org	
+git clone --depth 1 https://github.com/mckaz/code-dot-org
 cd code-dot-org
 cp /vagrant/code-dot-org-schema.rb dashboard/db/schema.rb
 bundle install
