@@ -34,7 +34,7 @@ Finally, you can find the type checked versions of the six apps used in our eval
 * Journey: `~/journey/`
 * Code.org: `~/code-dot-org/`
 * Huginn: `~/huginn/`
-* Wikipedia: `~/wikipedia/`
+* Wikipedia: `~/wikipedia-client/`
 * Twitter: `~/twitter/`
 
 ## Table 2
@@ -74,7 +74,7 @@ been inserted (`sh run_tests_chks.sh`) will run it. The reported runtime corresp
 * run_tests_no_chks.sh runs the same tests without dynamic checks (`sh run_tests_no_chks.sh` will run it). The reported runtime corresponds to the
 _Test Time No Chk_ column of Table 2.
 
-Note that two of the tests in the Discourse app report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
+Note that two of the tests in Discourse and three of the tests in Wikipedia report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
 
 ## Type and Termination Checking for Type-Level Code
 

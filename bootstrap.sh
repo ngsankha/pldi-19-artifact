@@ -58,7 +58,7 @@ bundle exec rake db:migrate
 cd ~
 
 # Setup Code.org
-git clone --depth 1 https://github.com/mckaz/code-dot-org	
+git clone --depth 1 --no-single-branch https://github.com/mckaz/code-dot-org	
 cd code-dot-org
 cp /vagrant/code-dot-org-schema.rb dashboard/db/schema.rb
 bundle install
