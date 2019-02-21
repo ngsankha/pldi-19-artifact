@@ -24,7 +24,7 @@ In order to use the provided image, FILL IN HERE.
 
 The VM includes CompRDL, the library comp types used for type checking, and the six apps type checked in our benchmarks.
 
-CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, The Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
+CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, the Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
 
 The comp types for database query libraries can be found in a separate directory. The comp types for ActiveRecord can be found in `~/db-types/active-record/db_types.rb`, and the comp types for Sequel can be found in `~/db-types/sequel/db_types.rb`.
 
