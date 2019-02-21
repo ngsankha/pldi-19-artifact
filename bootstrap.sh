@@ -67,4 +67,9 @@ cd ../dashboard
 bundle exec rails db:environment:set RAILS_ENV=development
 bundle exec rake db:create
 bundle exec rake db:schema:load
+cd ~/code-dot-org/
+git fetch origin nondep:nondep
+git checkout nondep
+bundle install
+git checkout staging
 cd ~
