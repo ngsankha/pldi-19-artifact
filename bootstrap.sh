@@ -6,32 +6,10 @@ sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get -y update
-sudo apt-get install -y gcc g++ gcc-6 g++-6 postgresql-10 libpq-dev redis-server imagemagick
+sudo apt-get install -y gcc g++ gcc-6 g++-6 postgresql-10 libpq-dev redis-server imagemagick libmagickwand-dev
 sudo update-alternatives --remove-all gcc
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 80 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 sudo -u postgres createuser vagrant --superuser
-
-ROOT_PASSWORD="root"
-
-echo "mysql-apt-config mysql-apt-config/unsupported-platform select abort" | sudo /usr/bin/debconf-set-selections
-echo "mysql-apt-config mysql-apt-config/repo-codename   select trusty" | sudo /usr/bin/debconf-set-selections
-echo "mysql-apt-config mysql-apt-config/select-tools select" | sudo /usr/bin/debconf-set-selections
-echo "mysql-apt-config mysql-apt-config/repo-distro select ubuntu" | sudo /usr/bin/debconf-set-selections
-echo "mysql-apt-config mysql-apt-config/select-server select mysql-5.7" | sudo /usr/bin/debconf-set-selections
-echo "mysql-apt-config mysql-apt-config/select-product select Apply" | sudo /usr/bin/debconf-set-selections
-
-export DEBIAN_FRONTEND=noninteractive
-wget http://dev.mysql.com/get/mysql-apt-config_0.6.0-1_all.deb
-DEBIAN_FRONTEND=noninteractive sudo dpkg --install mysql-apt-config_0.6.0-1_all.deb
-sudo apt-get -y update
-
-echo "mysql-community-server mysql-community-server/root-pass password $ROOT_PASSWORD" | sudo /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/re-root-pass password $ROOT_PASSWORD" | sudo /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/remove-data-dir boolean false" | sudo /usr/bin/debconf-set-selections
-echo "mysql-community-server mysql-community-server/data-dir note" | sudo /usr/bin/debconf-set-selections
-# add force and yes then `apt-get install -f`
-sudo apt-get install -y --force mysql-server libmysqlclient-dev libmagickwand-dev
-sudo apt-get install -f
 
 # Install RVM
 gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -60,7 +38,6 @@ echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
 mv Gemfile.new Gemfile
 bundle install
 bundle exec rake db:create db:migrate
-RAILS_ENV=test bundle exec rake db:create db:migrate
 cd ~
 
 # Setup Huginn
@@ -90,10 +67,14 @@ cd ~
 git clone --depth 1 https://github.com/mckaz/code-dot-org
 cd code-dot-org
 cp /vagrant/code-dot-org-schema.rb dashboard/db/schema.rb
+grep -v rdl Gemfile > Gemfile.new
+echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
+mv Gemfile.new Gemfile
 bundle install
 cd pegasus
 rake pegasus:setup_db
 cd ../dashboard
 bundle exec rails db:environment:set RAILS_ENV=development
+bundle exec rake db:create
 bundle exec rake db:schema:load
 cd ~
