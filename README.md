@@ -26,7 +26,7 @@ The VM includes CompRDL, the library comp types used for type checking, and the 
 
 CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, The Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
 
-The comp types for database query libraries can be found in a separate directory. The comp types for ActiveRecord can be found in FILL IN HERE, and the comp types for Sequel can be found in.
+The comp types for database query libraries can be found in a separate directory. The comp types for ActiveRecord can be found in `~/db-types/active-record/db_types.rb`, and the comp types for Sequel can be found in `~/db-types/sequel/db_types.rb`.
 
 Finally, you can find the type checked versions of the six apps used in our evaluations in Section 5 in the following directories: 
 
@@ -69,7 +69,14 @@ _Test Time No Chk_ column of Table 2.
 ## Type and Termination Checking for Type-Level Code
 
 As described in the paper, we also perform type and termination checking for all type-level code. More specifically, we type check type-level code to ensure that it returns a type, and we perform termination checking according
-to the algorithm described in Section 4. To perform this type and termination checking, navigate into the 
+to the algorithm described in Section 4. To perform this type and termination checking, navigate into the `db-types/` directory, and run the `check_type_code.sh` shell script:
+
+```
+cd ~/db-types/
+sh check_type_code.sh
+```
+
+This will perform type and termination checking, first for all type-level code, then for all helper methods dispatched from type-level code. It does this for all comp types of libraries listed in Table 1.
 
 ## Notational Differences
 
@@ -77,7 +84,7 @@ There are slight differences of notation between the types described in the pape
 We note these differences below:
 
 * In the paper, type-level computations are delimited by angle brackets, i.e., `<< ... >>`.
-In our implementation, type-levle computations are delimited by double backticks, i.e., `\`\`...\`\``.
+In our implementation, type-levle computations are delimited by double backticks, i.e., ` \` \`...\` \` `.
 
 * In the paper, type-level computations refer to the receiver type of a method call using the name `tself`.
 In the implementation, we use the name `trec`.
