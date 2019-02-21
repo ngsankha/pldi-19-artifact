@@ -68,3 +68,15 @@ bundle exec rails db:environment:set RAILS_ENV=development
 bundle exec rake db:create
 bundle exec rake db:schema:load
 cd ~
+
+# Setup Wikipedia Gem
+git clone https://github.com/ngsankha/wikipedia-client
+cd wikipedia-client
+bundle install
+cd ~
+
+# Setup Twitter Gem
+git clone https://github.com/ngsankha/twitter
+cd twitter
+bundle install
+cd ~
