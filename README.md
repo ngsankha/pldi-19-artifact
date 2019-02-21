@@ -7,7 +7,7 @@
 
 ## Setup
 
-It is straightforward (though more time intensive) to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](FILL IN HERE).
+It is straightforward (though more time intensive) to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing).
 
 To use Vagrant to produce a VM, simply clone and navigate into this repo, and call `vagrant up`:
 ```
@@ -18,7 +18,7 @@ vagrant up              # Build the VM
 
 This build should take approximately 30-40 minutes to complete. After this, you can call `vagrant ssh` from within the same directory to access the VM.
 
-In order to use the provided image, FILL IN HERE.
+In order to use the provided image, open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
 ## Navigating the VM
 
