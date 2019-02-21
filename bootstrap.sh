@@ -62,6 +62,7 @@ cp /vagrant/code-dot-org-schema.rb dashboard/db/schema.rb
 bundle install
 cd pegasus
 rake pegasus:setup_db
+RAILS_ENV=test rake pegasus:setup_db
 cd ../dashboard
 bundle exec rails db:environment:set RAILS_ENV=development
 bundle exec rake db:create
