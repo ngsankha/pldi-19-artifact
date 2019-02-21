@@ -35,6 +35,7 @@ git clone https://github.com/mckaz/discourse-typecheck
 cd discourse-typecheck
 bundle install
 bundle exec rake db:create db:migrate
+RAILS_ENV=test bundle exec rake db:create db:migrate
 cd ~
 
 # Setup Huginn
@@ -42,9 +43,6 @@ echo "Installing Huginn ..."
 git clone https://github.com/ngsankha/huginn
 cd huginn
 cp .env.example .env
-grep -v rdl Gemfile > Gemfile.new
-echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
-mv Gemfile.new Gemfile
 bundle install
 bundle exec rake db:create db:migrate db:seed
 cd ~
