@@ -24,15 +24,15 @@ In order to use the provided image, FILL IN HERE.
 
 The VM includes CompRDL, the library comp types used for type checking, and the six apps type checked in our benchmarks.
 
-CompRDL can be found in the directory FILL IN HERE. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in /lib/types/core/array.rb, The Hash types can be found in /lib/types/core/hash.rb, the Integer types can be found in /lib/types/core/integer.rb, the Float types in /lib/types/core/float.rb, and the String types in /lib/types/core/string.rb.
+CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, The Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
 
 The comp types for database query libraries can be found in a separate directory. The comp types for ActiveRecord can be found in FILL IN HERE, and the comp types for Sequel can be found in.
 
 Finally, you can find the type checked versions of the six apps used in our evaluations in Section 5 in the following directories: 
 
-* Discourse:
-* Journey:
-* Code.org:
+* Discourse: `~/discourse-typecheck/`
+* Journey: `~/journey/`
+* Code.org: `~/code-dot-org/`
 * Huginn:
 * Wikipedia:
 * Twitter: 
@@ -51,10 +51,10 @@ FILL IN HERE
 # Collecting Data
 
 In order to collect data on the VM, first navigate into one of the application directories listed above,
-e.g., `cd FILL IN HERE`. Within each app directory, there are four shell scripts that can be run:
+e.g., `cd ~/discourse-typecheck/`. Within each app directory, there are four shell scripts that can be run:
 
 * tc_comp.sh type checks the application using comp types (`sh tc_comp.sh` will run it). Running this will
-collect the data corresponding to the _Meths_, _Casts_, and _Time_ columns of Table 2. You can find
+collect the data corresponding to the _Meths_, _Casts_, _Time_, and _Type Errs_ columns of Table 2. You can find
 the type annotations for the methods being type checked inside of the file typecheck.rb within each app directory.
 This file also contains the extra method and variable annotations used (corresponding to the _Extra Annots._ column of Table 2).
 
@@ -70,13 +70,13 @@ _Test Time No Chk_ column of Table 2.
 
 
 
-## Notation
+## Notational Differences
 
 There are slight differences of notation between the types described in the paper and types in our implementation.
 We note these differences below:
 
-* In the paper, type-level computations are delimited by angle brackets, i.e., &laquo ... &raquo.
-In our implementation, type-levle computations are delimited by double backticks, i.e., ``...``.
+* In the paper, type-level computations are delimited by angle brackets, i.e., `<< ... >>`.
+In our implementation, type-levle computations are delimited by double backticks, i.e., `\`\`...\`\``.
 
 * In the paper, type-level computations refer to the receiver type of a method call using the name `tself`.
 In the implementation, we use the name `trec`.
