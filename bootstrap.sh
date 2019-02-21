@@ -73,3 +73,15 @@ git checkout nondep
 bundle install
 git checkout staging
 cd ~
+
+# Setup Wikipedia Gem
+git clone https://github.com/ngsankha/wikipedia-client
+cd wikipedia-client
+bundle install
+cd ~
+
+# Setup Twitter Gem
+git clone https://github.com/ngsankha/twitter
+cd twitter
+bundle install
+cd ~
