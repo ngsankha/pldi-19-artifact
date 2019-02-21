@@ -41,7 +41,7 @@ Finally, you can find the type checked versions of the six apps used in our eval
 
 Table 2 measures the type checking results for the six applications. Please note that there are some
 very minor differences on the VM from the original results. The differences arise from fixes to bugs
-in the type checker which allowed us to reduce the number of type casts, and other type casts that we
+in the type checker which allowed us to reduce the number of type casts, and other type casts or methods that we
 mistakenly did not count. Overall, the differences are minimal. We have included a new version of the table
 below:
 
@@ -68,7 +68,8 @@ _Test Time No Chk_ column of Table 2.
 
 ## Type and Termination Checking for Type-Level Code
 
-
+As described in the paper, we also perform type and termination checking for all type-level code. More specifically, we type check type-level code to ensure that it returns a type, and we perform termination checking according
+to the algorithm described in Section 4. To perform this type and termination checking, navigate into the 
 
 ## Notational Differences
 
