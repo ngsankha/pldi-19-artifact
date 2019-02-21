@@ -45,7 +45,15 @@ in the type checker which allowed us to reduce the number of type casts, and oth
 mistakenly did not count. Overall, the differences are minimal. We have included a new version of the table
 below:
 
-FILL IN HERE
+| Programs  | Meths | LoC  | Extra Annots. | Casts | Casts (RDL) | Time (s) Median +/- SIQR | Test Time No Chk (s) | Test Time w/ Chk (s) | Type Errs |
+|-----------|-------|------|---------------|-------|-------------|--------------------------|----------------------|----------------------|-----------|
+| Wikipedia | 16    | 47   | 3             |       |             | 0.05 +/- 0.01            | 5.94 +/ 0.20         | 6.19 +/- 0.20        | 0         |
+| Twitter   | 3     | 29   | 11            |       |             | 0.02 +/- 0.00            | 0.05 +/- 0.00        | 0.06 +/ 0.00         | 0         |
+| Discourse | 36    | 261  | 32            | 13    |             | 14.00 +/- 1.19           | 84.90 +/- 0.69       | 88.59 +/- 3.98       | 0         |
+| Huginn    | 7     | 54   | 6             |       |             | 2.88 +/- 0.24            | 6.43 +/- 0.34        | 4.56 +/- 0.28        | 0         |
+| Code.org  | 49    | 530  | 53            | 3     | 68          | 0.33 +/- 0.02            | 3.23 +/- 0.25        | 3.15 +/- 0.20        | 1         |
+| Journey   | 21    | 419  | 78            | 14    | 59          | 2.08 +/- 0.05            | 5.67 +/- 0.69        | 6.12 +/- 1.02        | 2         |
+| Total     |       | 1340 | 183           |       |             | 19.37 +/- 1.51           | 106.22 +/- 2.17      | 108.67 +/- 5.73      | 3         |
 
 
 # Collecting Data
