@@ -33,9 +33,6 @@ cd ~
 echo "Installing Discourse ..."
 git clone https://github.com/mckaz/discourse-typecheck
 cd discourse-typecheck
-grep -v rdl Gemfile > Gemfile.new
-echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
-mv Gemfile.new Gemfile
 bundle install
 bundle exec rake db:create db:migrate
 cd ~
@@ -56,9 +53,6 @@ cd ~
 git clone https://github.com/mckaz/journey
 cd journey
 cp /vagrant/journey_database.yml config/database.yml
-grep -v rdl Gemfile > Gemfile.new
-echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
-mv Gemfile.new Gemfile
 bundle install
 bundle exec rake db:migrate
 cd ~
@@ -67,9 +61,6 @@ cd ~
 git clone --depth 1 https://github.com/mckaz/code-dot-org
 cd code-dot-org
 cp /vagrant/code-dot-org-schema.rb dashboard/db/schema.rb
-grep -v rdl Gemfile > Gemfile.new
-echo "gem 'rdl', path: \"~/rdl/\"" >> Gemfile.new
-mv Gemfile.new Gemfile
 bundle install
 cd pegasus
 rake pegasus:setup_db
