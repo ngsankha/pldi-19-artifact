@@ -7,7 +7,7 @@
 
 ## Setup
 
-It is straightforward to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](FILL IN HERE).
+It is straightforward (though more time intensive) to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](FILL IN HERE).
 
 To use Vagrant to produce a VM, simply clone and navigate into this repo, and call `vagrant up`:
 ```
@@ -24,7 +24,7 @@ In order to use the provided image, FILL IN HERE.
 
 The VM includes CompRDL, the library comp types used for type checking, and the six apps type checked in our benchmarks.
 
-CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, The Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
+CompRDL can be found in the directory `~/rdl/`. CompRDL includes within it the comp types we wrote for Ruby's core libraries (corresponding to Table 1 in the paper). The Array types can be found in `~/rdl/lib/types/core/array.rb`, the Hash types can be found in `~/rdl/lib/types/core/hash.rb`, the Integer types can be found in `~/rdl/lib/types/core/integer.rb`, the Float types in `~/rdl/lib/types/core/float.rb`, and the String types in `~/rdl/lib/types/core/string.rb`.
 
 The comp types for database query libraries can be found in a separate directory. The comp types for ActiveRecord can be found in `~/db-types/active-record/db_types.rb`, and the comp types for Sequel can be found in `~/db-types/sequel/db_types.rb`.
 
@@ -33,9 +33,9 @@ Finally, you can find the type checked versions of the six apps used in our eval
 * Discourse: `~/discourse-typecheck/`
 * Journey: `~/journey/`
 * Code.org: `~/code-dot-org/`
-* Huginn:
-* Wikipedia:
-* Twitter: 
+* Huginn: `~/huginn/`
+* Wikipedia: `~/wikipedia/`
+* Twitter: `~/twitter/`
 
 ## Table 2
 
@@ -47,13 +47,13 @@ below:
 
 | Programs  | Meths | LoC  | Extra Annots. | Casts | Casts (RDL) | Time (s) Median +/- SIQR | Test Time No Chk (s) | Test Time w/ Chk (s) | Type Errs |
 |-----------|-------|------|---------------|-------|-------------|--------------------------|----------------------|----------------------|-----------|
-| Wikipedia | 16    | 47   | 3             | 1     | 11          | 0.05 +/- 0.01            | 5.94 +/ 0.20         | 6.19 +/- 0.20        | 0         |
+| Wikipedia | 16    | 47   | 3             | 1     | 13          | 0.05 +/- 0.01            | 5.94 +/ 0.20         | 6.19 +/- 0.20        | 0         |
 | Twitter   | 3     | 29   | 11            | 3     | 8           | 0.02 +/- 0.00            | 0.05 +/- 0.00        | 0.06 +/ 0.00         | 0         |
 | Discourse | 36    | 261  | 32            | 13    | 22          | 14.00 +/- 1.19           | 84.90 +/- 0.69       | 88.59 +/- 3.98       | 0         |
 | Huginn    | 7     | 54   | 6             | 3     | 6           | 2.88 +/- 0.24            | 6.43 +/- 0.34        | 4.56 +/- 0.28        | 0         |
 | Code.org  | 49    | 530  | 53            | 3     | 68          | 0.33 +/- 0.02            | 3.23 +/- 0.25        | 3.15 +/- 0.20        | 1         |
 | Journey   | 21    | 419  | 78            | 14    | 59          | 2.08 +/- 0.05            | 5.67 +/- 0.69        | 6.12 +/- 1.02        | 2         |
-| Total     | 132   | 1340 | 183           | 37    | 174         | 19.37 +/- 1.51           | 106.22 +/- 2.17      | 108.67 +/- 5.73      | 3         |
+| Total     | 132   | 1340 | 183           | 37    | 176         | 19.37 +/- 1.51           | 106.22 +/- 2.17      | 108.67 +/- 5.73      | 3         |
 
 
 # Collecting Data
@@ -73,6 +73,8 @@ been inserted (`sh run_tests_chks.sh`) will run it. The reported runtime corresp
 
 * run_tests_no_chks.sh runs the same tests without dynamic checks (`sh run_tests_no_chks.sh` will run it). The reported runtime corresponds to the
 _Test Time No Chk_ column of Table 2.
+
+Note that two of the tests in the Discourse app report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
 
 ## Type and Termination Checking for Type-Level Code
 

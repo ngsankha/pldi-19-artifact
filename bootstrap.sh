@@ -27,6 +27,8 @@ git clone https://github.com/plum-umd/rdl
 git clone https://github.com/mckaz/db-types
 cd rdl
 git checkout pldi-comp-types
+gem build rdl.gemspec
+gem install rdl-2.1.0.gem
 cd ~
 
 # Setup Discourse
