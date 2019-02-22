@@ -2,12 +2,12 @@
 
 With the permission of the artifact evaluation committee chairs, we use a Github repository as our submitted artifact.
 
-## Requirements
+## Getting Started: Requirements
 
 * [VirtualBox](https://www.virtualbox.org/).
 * [Vagrant](https://www.vagrantup.com/).
 
-## Setup
+## Getting Started: Setup
 
 It is straightforward to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing).
 
@@ -26,7 +26,7 @@ This build should take approximately 30-40 minutes to complete. After this, you 
 
 In order to use the [provided image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing), open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
-## Navigating the VM
+## Getting Started: Navigating the VM
 
 The VM includes CompRDL, the library comp types used for type checking, and the six apps type checked in our benchmarks.
 
@@ -89,6 +89,13 @@ been inserted (`sh run_tests_chks.sh`) will run it. The reported runtime corresp
 * **run_tests_no_chks.sh** runs the same tests without dynamic checks (`sh run_tests_no_chks.sh` will run it). The reported runtime corresponds to the _Test Time No Chk_ column of Table 2.
 
 Note that two of the tests in Discourse and three of the tests in Wikipedia report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
+
+All of the data in Table 2 is reproducible in the VM, with the following caveats:
+
+* Time performance measures will of course differ from run to run.
+
+* The _LoC_ and _Extra Annots._ columns of Table 2 are not counted automatically by the provided shell scripts,
+and will instead have to be counted manually by anyone interested in reproducing them.
 
 ## Type and Termination Checking for Type-Level Code
 
