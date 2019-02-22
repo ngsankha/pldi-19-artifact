@@ -37,7 +37,7 @@ call `vagrant ssh` from within the same directory to access the VM.
 ### VM Image
 
 In order to use the provided image,
-open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM.
+open the `pldi-19-artifact.ova` file in VirtualBox to import the VM.
 Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
 ## Getting Started: Navigating the VM

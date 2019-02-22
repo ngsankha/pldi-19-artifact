@@ -9,7 +9,7 @@ With the permission of the artifact evaluation committee chairs, we use a Github
 
 ## Getting Started: Setup
 
-It is straightforward to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing).
+It is straightforward to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/file/d/1X5dO5_QdHQXM4ctIbdw9ZUSxrjkg6eaC/view?usp=sharing).
 
 ### Vagrant
 
@@ -24,6 +24,7 @@ This build should take approximately 30-40 minutes to complete. After this, you 
 
 ### VM Image
 
+
 The VM image can be found [here](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing). The MD5 hash for this zip file is `96813f71ba74b86dabffa65f54eadddc`.
 
 To run it, open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
@@ -33,6 +34,7 @@ You may not be able to scroll in the VirtualBox terminal using your mouse.
 Instead, you can use `Shift + Page Up` or `Shift + Page Down`. 
 On a Mac, `Page Up` is the equivalent of `fn + Up Arrow` and
 `Page Down` is `fn + Down Arrow`.
+
 
 ## Getting Started: Navigating the VM
 
