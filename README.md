@@ -24,7 +24,7 @@ This build should take approximately 30-40 minutes to complete. After this, you 
 
 ### VM Image
 
-In order to use the [provided image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing), open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
+In order to use the [provided image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing), open the `pldi-19-artifact.ova` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
 ## Getting Started: Navigating the VM
 
