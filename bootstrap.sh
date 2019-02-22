@@ -10,6 +10,7 @@ sudo apt-get install -y gcc g++ gcc-6 g++-6 postgresql-10 libpq-dev redis-server
 sudo update-alternatives --remove-all gcc
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 80 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 sudo -u postgres createuser vagrant --superuser
+sudo rm ~/mysql-apt-config_0.7.2-1_all.deb
 
 # Install RVM
 gpg2 --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -58,7 +59,7 @@ bundle exec rake db:migrate
 cd ~
 
 # Setup Code.org
-git clone --depth 1 --no-single-branch https://github.com/mckaz/code-dot-org	
+git clone --depth 1 --no-single-branch https://github.com/mckaz/code-dot-org
 cd code-dot-org
 bundle install
 cd pegasus
