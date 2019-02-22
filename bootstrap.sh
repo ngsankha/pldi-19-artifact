@@ -58,7 +58,7 @@ bundle exec rake db:migrate
 cd ~
 
 # Setup Code.org
-git clone --depth 1 https://github.com/mckaz/code-dot-org
+git clone --depth 1 --no-single-branch https://github.com/mckaz/code-dot-org	
 cd code-dot-org
 bundle install
 cd pegasus
@@ -68,8 +68,6 @@ cd ../dashboard
 bundle exec rails db:environment:set RAILS_ENV=development
 bundle exec rake db:create
 bundle exec rake db:schema:load
-cd ~/code-dot-org/
-git fetch origin nondep:nondep
 git checkout nondep
 bundle install
 git checkout staging

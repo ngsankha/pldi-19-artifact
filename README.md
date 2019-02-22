@@ -7,7 +7,7 @@
 
 ## Setup
 
-It is straightforward (though more time intensive) to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing).
+It is straightforward to use Vagrant along with the files in this repository to produce a VM image that contains CompRDL and all the benchmarks used in our evaluations. Equivalently, you can use the [provided VM image](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing).
 
 To use Vagrant to produce a VM, simply clone and navigate into this repo, and call `vagrant up`:
 ```
@@ -16,7 +16,7 @@ cd pldi-19-artifact
 vagrant up              # Build the VM
 ```
 
-This build should take approximately 30-40 minutes to complete. After this, you can call `vagrant ssh` from within the same directory to access the VM.
+This build should take approximately 30 minutes to complete. After this, you can call `vagrant ssh` from within the same directory to access the VM.
 
 In order to use the provided image, open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
@@ -34,7 +34,7 @@ Finally, you can find the type checked versions of the six apps used in our eval
 * Journey: `~/journey/`
 * Code.org: `~/code-dot-org/`
 * Huginn: `~/huginn/`
-* Wikipedia: `~/wikipedia/`
+* Wikipedia: `~/wikipedia-client/`
 * Twitter: `~/twitter/`
 
 ## Table 2
@@ -74,7 +74,7 @@ been inserted (`sh run_tests_chks.sh`) will run it. The reported runtime corresp
 * run_tests_no_chks.sh runs the same tests without dynamic checks (`sh run_tests_no_chks.sh` will run it). The reported runtime corresponds to the
 _Test Time No Chk_ column of Table 2.
 
-Note that two of the tests in the Discourse app report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
+Note that two of the tests in Discourse and three of the tests in Wikipedia report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
 
 ## Type and Termination Checking for Type-Level Code
 
