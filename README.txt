@@ -1,11 +1,12 @@
 CompRDL Artifact VM
 -------------------
 
+We recommend reading this information directly from the README in
+the provided Github repository. It is identical to the information in this txt file.
+
 With the permission of the artifact evaluation committee chairs,
 we use a Github repository as our submitted artifact.
 
-We recommend reading this information directly from the README in
-the provided Github repository. It is identical to the information in this txt file.
 
 
 GETTING STARTED GUIDE
@@ -19,8 +20,7 @@ GETTING STARTED GUIDE
 
 It is straightforward to use Vagrant along with the files in this repository to
 produce a VM image that contains CompRDL and all the benchmarks used in our evaluations.
-Equivalently, you can use the provided VM image:
-https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing.
+Equivalently, you can use the provided VM image.
 
 ### Vagrant
 
@@ -36,8 +36,7 @@ call `vagrant ssh` from within the same directory to access the VM.
 
 ### VM Image
 
-In order to use the provided image
-(https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing),
+In order to use the provided image,
 open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM.
 Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
