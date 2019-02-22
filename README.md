@@ -1,5 +1,7 @@
 # CompRDL Artifact VM
 
+With the permission of the artifact evaluation committee chairs, we use a Github repository as our submitted artifact.
+
 ## Requirements
 
 * [VirtualBox](https://www.virtualbox.org/).
@@ -16,7 +18,7 @@ cd pldi-19-artifact
 vagrant up              # Build the VM
 ```
 
-This build should take approximately 30 minutes to complete. After this, you can call `vagrant ssh` from within the same directory to access the VM.
+This build should take approximately 30-40 minutes to complete. After this, you can call `vagrant ssh` from within the same directory to access the VM.
 
 In order to use the provided image, open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
