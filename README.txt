@@ -1,6 +1,13 @@
-# CompRDL Artifact VM
+CompRDL Artifact VM
+-------------------
 
 With the permission of the artifact evaluation committee chairs, we use a Github repository as our submitted artifact.
+
+We recommend reading this information directly from the README in the provided Github repository.
+It is identical to the information in this txt file.
+
+
+GETTING STARTED GUIDE
 
 ## Getting Started: Requirements
 
@@ -51,6 +58,10 @@ Finally, you can find the type checked versions of the six apps used in our eval
 * Huginn: `~/huginn/`
 * Wikipedia: `~/wikipedia-client/`
 * Twitter: `~/twitter/`
+
+
+STEP-BY-STEP INSTRUCTIONS FOR COLLECTING DATA
+
 
 ## Table 2
 
