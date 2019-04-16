@@ -25,9 +25,9 @@ This build should take approximately 30-40 minutes to complete. After this, you 
 ### VM Image
 
 
-The VM image can be found [here](https://drive.google.com/drive/folders/1Rl_r0UhqRlYVLimDDj0kv-NqjK-t_Mz1?usp=sharing). The MD5 hash for this zip file is `96813f71ba74b86dabffa65f54eadddc`.
+The VM image can be found [here](https://drive.google.com/file/d/1X5dO5_QdHQXM4ctIbdw9ZUSxrjkg6eaC/view?usp=sharing). The MD5 hash for this zip file is `96813f71ba74b86dabffa65f54eadddc`.
 
-To run it, open the `pldi-19-artifact.vbox` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
+To run it, open the `pldi-19-artifact.ova` file in VirtualBox to import the VM. Once you start the VM, you can access the shell with username `vagrant` and password `vagrant`.
 
 A tip when using VirtualBox:
 You may not be able to scroll in the VirtualBox terminal using your mouse.
