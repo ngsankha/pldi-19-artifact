@@ -90,6 +90,8 @@ e.g., `cd ~/discourse-typecheck/`. Within each app directory, there are four she
 collect the data corresponding to the _Meths_, _Casts_, _Time_, and _Type Errs_ columns of Table 2. You can find
 the type annotations for the methods being type checked inside of the file typecheck.rb within each app directory.
 This file also contains the extra method and variable annotations used (corresponding to the _Extra Annots._ column of Table 2).
+We could have put these annotations alongside the code they annotate, but we felt it was more accessible if they are "factored out" into a separate file this way.
+
 
 * **tc_noncomp.sh** type checks the application using non comp types (`sh tc_noncomp.sh` will run it). The reported number of type casts corresponds to the _Casts (RDL)_ column of Table 2.
 
@@ -99,6 +101,11 @@ been inserted (`sh run_tests_chks.sh`) will run it. The reported runtime corresp
 * **run_tests_no_chks.sh** runs the same tests without dynamic checks (`sh run_tests_no_chks.sh` will run it). The reported runtime corresponds to the _Test Time No Chk_ column of Table 2.
 
 Note that two of the tests in Discourse and three of the tests in Wikipedia report failures. These failures occur with or without CompRDL's inserted dynamic checks, and thus are unrelated to comp types.
+
+We also note that, when running the type checker, we must first load the corresponding application.
+We _do not_ count the time taken to load the application, as this is done entirely before
+type checking begins. Thus, you may notice a difference a the time taken to run a script
+vs. the reported type checking time.
 
 All of the data in Table 2 is reproducible in the VM, with the following caveats:
 

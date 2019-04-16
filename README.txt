@@ -2,11 +2,8 @@ CompRDL Artifact VM
 -------------------
 
 We recommend reading this information directly from the README in
-the provided Github repository. It is identical to the information in this txt file.
-
-With the permission of the artifact evaluation committee chairs,
-we use a Github repository as our submitted artifact.
-
+the Github repository, here: https://github.com/ngsankha/pldi-19-artifact.
+It is identical to the information in this txt file.
 
 
 GETTING STARTED GUIDE
@@ -108,6 +105,9 @@ You can find the type annotations for the methods being type
 checked inside of the file typecheck.rb within each app directory.
 This file also contains the extra method and variable annotations
 used (corresponding to the _Extra Annots._ column of Table 2).
+We could have put these annotations alongside the code they annotate,
+but we felt it was more accessible if they are "factored out"
+into a separate file this way.
 
 * **tc_noncomp.sh** type checks the application using non comp
 types (`sh tc_noncomp.sh` will run it). The reported number of
@@ -125,6 +125,11 @@ to the _Test Time No Chk_ column of Table 2.
 Note that two of the tests in Discourse and three of the tests in Wikipedia
 report failures. These failures occur with or without CompRDL's inserted dynamic
 checks, and thus are unrelated to comp types.
+
+We also note that, when running the type checker, we must first load the corresponding application.
+We _do not_ count the time taken to load the application, as this is done entirely before
+type checking begins. Thus, you may notice a difference a the time taken to run a script
+vs. the reported type checking time.
 
 All of the data in Table 2 is reproducible in the VM, with the following caveats:
 
